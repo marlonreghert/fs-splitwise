@@ -19,6 +19,8 @@ Batch expense uploads are supported through CSV files. The process involves:
 A **Makefile** is provided for common operations.  
 A **Postman collection** is available to simplify API testing.
 
+Expenses remainders are always handled by the payer.
+
 ---
 
 ## Routes

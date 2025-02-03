@@ -6,17 +6,9 @@ import { addExpenseHandler,
   processUploadedCSVHandler } from "../controllers/expenseController";
 import { settleDebtHandler } from "../controllers/settlementController";
 import express from "express";
-import multer from "multer";
 import path from "path";
 
 const router = express.Router();
-
-// Multer configuration for file uploads
-const upload = multer({
-    dest: path.join(__dirname, "../../uploads"), // Temporary storage
-    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max file size
-  });
-  
 
 // User Routes
 router.post("/users", createUserHandler);
