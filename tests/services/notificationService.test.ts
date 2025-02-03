@@ -1,7 +1,7 @@
-// ✅ Declare the mock first
+// Declare the mock first
 const mockSendMail = jest.fn();
 
-// ✅ Mock nodemailer
+// Mock nodemailer
 jest.mock("nodemailer", () => {
   const actualNodemailer = jest.requireActual("nodemailer"); // Keep the actual Nodemailer behavior
   return {
@@ -12,7 +12,7 @@ jest.mock("nodemailer", () => {
   };
 });
 
-// ✅ Mock the database
+// Mock the database
 jest.mock("../../src/db/db", () => ({
   db: {
     query: {
