@@ -3,7 +3,8 @@ const mockSendMail = jest.fn();
 
 // Mock nodemailer
 jest.mock("nodemailer", () => {
-  const actualNodemailer = jest.requireActual("nodemailer"); // Keep the actual Nodemailer behavior
+  // Keep the actual Nodemailer behavior
+  const actualNodemailer = jest.requireActual("nodemailer"); 
   return {
     ...actualNodemailer,
     createTransport: jest.fn(() => ({

@@ -2,7 +2,7 @@ import { db } from "../db/db";
 import { expenses } from "../db/schema/expenses";
 import { balances } from "../db/schema/balances";
 import { generatePresignedUrl, downloadFileFromS3 } from './s3Service'
-import { sendNotification } from "./notificationService"; // Import notification service
+import { sendNotification } from "./notificationService";
 import { sql, eq } from "drizzle-orm";
 import { parse } from "csv-parse/sync";
 import fs from "fs";

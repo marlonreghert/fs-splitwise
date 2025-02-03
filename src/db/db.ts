@@ -1,7 +1,7 @@
-import "dotenv/config"; // Load environment variables immediately
+import "dotenv/config"; 
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
-import * as schema from "./schema"; // Ensure schema is correctly imported
+import * as schema from "./schema";
 
 if (!process.env.DATABASE_URL) {
   console.error("DATABASE_URL is not set. Check your .env file.");
@@ -15,4 +15,4 @@ const pool = new Pool({
 
 export const db = drizzle(pool, { schema });
 
-console.log("✅ Database connection initialized successfully.");
+console.log("Database connection initialized successfully.");
