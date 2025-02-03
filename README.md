@@ -176,6 +176,7 @@ PostgreSQL, with its ACID compliance, scalability options, and strong community 
 - **Prod Deployment:** Deploy on S3 directly managing EC2 instances directly or cloud orchestration services like Amazon Elastic Beanstalk
 - **CI/CD:** Automate test execution & deployment
 - **API Version:** Versionizing the API (route based: api/v1)
+- **Tests:** Increase test coverage & add integration tests
 
 ---
 
