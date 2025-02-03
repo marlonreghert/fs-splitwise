@@ -77,9 +77,12 @@ A **Postman collection** is available to simplify API testing.
 - Cascading deletes maintain referential integrity.
 - Normalized schema reduces redundancy.
 
-**Sharding:**  
-- Data is sharded by `group_id`, ensuring all group-related data resides on the same DB instance.  
+**Sharding (Future work):**  
+- Data can be sharded by `group_id`, ensuring all group-related data resides on the same DB instance.  
 - Potential hot spots are mitigated through even distribution of groups.
+
+**Indexes:**
+- Every entity holding a "groupId" column has an index on this column to speed up reads. 
 
 ---
 
