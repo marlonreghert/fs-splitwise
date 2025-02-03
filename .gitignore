@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Temporary files)
+temp/
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# AWS credentials
+.aws/
+

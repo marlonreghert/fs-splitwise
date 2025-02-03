@@ -1,0 +1,3 @@
+payerId,description,amount,involvedUserIds
+248f67df-5d0b-4e05-86d2-0cf91f38ba1c,Dinner Expense,5000,"b8e844f9-20e7-45fe-86fd-605412e26988,fd50fa6c-44b9-4086-898c-04a45331db29"
+248f67df-5d0b-4e05-86d2-0cf91f38ba1c,Cinema Movie,1000,b8e844f9-20e7-45fe-86fd-605412e26988

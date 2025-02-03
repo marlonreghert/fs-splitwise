@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "5482dd7f-2cb5-42f9-b596-19a9513f1aee",
+		"name": "FS Splitwise API Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27887098"
+	},
+	"item": [
+		{
+			"name": "Create Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"friends_of_vancouver\",\n    \"memberIds\": [\n        \"248f67df-5d0b-4e05-86d2-0cf91f38ba1c\",\n        \"b8e844f9-20e7-45fe-86fd-605412e26988\",\n        \"fd50fa6c-44b9-4086-898c-04a45331db29\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Groups",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerId\": \"248f67df-5d0b-4e05-86d2-0cf91f38ba1c\",\n    \"description\": \"Nice party in vegas\",\n    \"amount\": \"30000\",\n    \"involvedUserIds\": [\n        \"b8e844f9-20e7-45fe-86fd-605412e26988\",\n        \"fd50fa6c-44b9-4086-898c-04a45331db29\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups/{{group_id}}/expenses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"{{group_id}}",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Expenses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups/de98b23e-b181-418a-b5a1-39a0b3579369/expenses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"de98b23e-b181-418a-b5a1-39a0b3579369",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Settle Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerId\": \"fd50fa6c-44b9-4086-898c-04a45331db29\",\n    \"receiverId\": \"248f67df-5d0b-4e05-86d2-0cf91f38ba1c\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups/de98b23e-b181-418a-b5a1-39a0b3579369/settlements",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"de98b23e-b181-418a-b5a1-39a0b3579369",
+						"settlements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Group Balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/groups/de98b23e-b181-418a-b5a1-39a0b3579369/balances",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"de98b23e-b181-418a-b5a1-39a0b3579369",
+						"balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Pre-Signed URL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"groupId\": \"your-group-id\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups/de98b23e-b181-418a-b5a1-39a0b3579369/expenses/upload/presigned-url",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"de98b23e-b181-418a-b5a1-39a0b3579369",
+						"expenses",
+						"upload",
+						"presigned-url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload CSV to Pre-Signed URL",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/csv"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/path/to/your/file.csv"
+					}
+				},
+				"url": {
+					"raw": "s3-bucket-url.com/path/to/pre-signed-url",
+					"host": [
+						"s3-bucket-url",
+						"com"
+					],
+					"path": [
+						"path",
+						"to",
+						"pre-signed-url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger CSV Processing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"fileId\": \"a78eefd8-c9f6-4c09-8d0a-efd28e1b6f25\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/groups/de98b23e-b181-418a-b5a1-39a0b3579369/expenses/upload/process",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"groups",
+						"de98b23e-b181-418a-b5a1-39a0b3579369",
+						"expenses",
+						"upload",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "group_name",
+			"value": "Trip to NYC"
+		},
+		{
+			"key": "group_id",
+			"value": "replace-with-group-id"
+		},
+		{
+			"key": "payer_id",
+			"value": "replace-with-user-id"
+		},
+		{
+			"key": "receiver_id",
+			"value": "replace-with-user-id"
+		},
+		{
+			"key": "user_id_1",
+			"value": "replace-with-user-id"
+		},
+		{
+			"key": "user_id_2",
+			"value": "replace-with-user-id"
+		},
+		{
+			"key": "expense_description",
+			"value": "Dinner"
+		},
+		{
+			"key": "amount",
+			"value": "100"
+		},
+		{
+			"key": "settlement_amount",
+			"value": "50"
+		}
+	]
+}
