@@ -154,14 +154,27 @@ PostgreSQL, with its ACID compliance, scalability options, and strong community 
 
 ---
 
+## Others Assumptions
+
+- Email notifications are fire & forget calls happenning only after all DB transactions have executed succesfully.
+- S3 Pre-signed urls have a 1 hour expiration time.
+- Amounts are sent in cents to improve accuracy
+- We are assuming all the requests are valids (example: Users do exist, they are part of the group in question, . . .)
+
+---
+
 ## Future Improvements
 
 - **Microservices:** Split into User, Group, Expense services for better scalability.
 - **Event-Driven Architecture:** Use Kafka for handling batch uploads and cross-service communication.
 - **Data Analytics:** Enable data lakes and advanced analytics pipelines.
 - **Enhanced Reliability:** Implement retries, monitoring, and distributed tracing.
-- **Read replicas** To improve the overall read throughput
-- **Sharding** Increase overall write throughput & storage limitations
+- **Read replicas:** To improve the overall read throughput
+- **Sharding:** Increase overall write throughput & storage limitations
+- **S3 Data eviction:** Setup an appropriate data eviction for S3 - right now is set to 30 days
+- **Containerizing:** To ensure consistency across environments, simplifies deployment, and improves scalability. 
+- **Prod Deployment:** Deploy on S3 directly managing EC2 instances directly or cloud orchestration services like Amazon Elastic Beanstalk
+- **CI/CD:** Automate test execution & deployment
 
 ---
 
